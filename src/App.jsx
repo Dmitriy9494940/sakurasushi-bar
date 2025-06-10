@@ -1,16 +1,19 @@
-import React from 'react';
-import Header from './components/Header';
-import Menu from './pages/Menu';
-import Cart from './components/Cart';
+import React from 'react'
+import SakuraAnimation from './SakuraAnimation'
+import Cart from './Cart'
 
-function App() {
+export default function App() {
   return (
     <div>
-      <Header />
-      <Menu />
-      <Cart />
+      <SakuraAnimation />
+      <header>
+        <img src="/logo.png" alt="Sakura Sushi" width="200" />
+        <h1>Добро пожаловать в Sakura Sushi!</h1>
+      </header>
+      <main>
+        <p>Вкуснейшие суши и роллы с доставкой по Апрелевке</p>
+        <Cart />
+      </main>
     </div>
-  );
+  )
 }
-
-export default App;
