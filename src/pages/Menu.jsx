@@ -1,17 +1,5 @@
-import React from 'react';
+import React from "react"; import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"; import { Card, CardContent } from "@/components/ui/card";
 
-const Menu = () => {
-  return (
-    <div className="p-6">
-      <h1 className="text-3xl font-bold mb-4">РњРµРЅСЋ</h1>
-      <ul className="space-y-2">
-        <li className="p-4 bg-white rounded-lg shadow">рџЌЈ Р РѕР»Р» Р¤РёР»Р°РґРµР»СЊС„РёСЏ</li>
-        <li className="p-4 bg-white rounded-lg shadow">рџЌ¤ РўРµРјРїСѓСЂР° СЂРѕР»Р»</li>
-        <li className="p-4 bg-white rounded-lg shadow">рџЌњ Р Р°РјРµРЅ СЃ РєСѓСЂРёС†РµР№</li>
-        <li className="p-4 bg-white rounded-lg shadow">рџЌ± РЎРµС‚ РЅР° РґРІРѕРёС…</li>
-      </ul>
-    </div>
-  );
-};
+const menu = { sushi: [ { name: "Сяке", price: "120 ?" }, { name: "Унаги", price: "150 ?" }, ], rolls: [ { name: "Филадельфия", price: "390 ?" }, { name: "Калифорния", price: "330 ?" }, ], sets: [ { name: "Сет Премиум", price: "990 ?" }, { name: "Сет Классик", price: "850 ?" }, ], delivery: [ { name: "Доставка по Апрелевке и МО", price: "Бесплатно от 1000 ?" }, { name: "Самовывоз", price: "-10% скидка" }, ], };
 
-export default Menu;
+export default function SakuraMenu() { return ( <div className="min-h-screen bg-black text-white p-4"> <h1 className="text-3xl font-bold text-center mb-6">Меню Sakura Sushi</h1> <Tabs defaultValue="sushi" className="w-full max-w-2xl mx-auto"> <TabsList className="grid grid-cols-4 bg-gray-900 rounded-xl"> <TabsTrigger value="sushi">Суши</TabsTrigger> <TabsTrigger value="rolls">Роллы</TabsTrigger> <TabsTrigger value="sets">Сеты</TabsTrigger> <TabsTrigger value="delivery">Доставка</TabsTrigger> </TabsList> {Object.entries(menu).map(([key, items]) => ( <
